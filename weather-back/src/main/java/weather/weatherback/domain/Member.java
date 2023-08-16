@@ -1,11 +1,11 @@
 package weather.weatherback.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
-import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -32,4 +32,7 @@ public class Member {
 
     @Column
     private boolean uvOn;
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.REMOVE)
+    private List<MemberNotif> memberNotifList;
 }
