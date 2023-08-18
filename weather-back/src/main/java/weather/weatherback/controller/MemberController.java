@@ -1,10 +1,34 @@
 package weather.weatherback.controller;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import weather.weatherback.domain.Member;
+import weather.weatherback.service.MemberService;
 
+import java.util.List;
+
+@RequiredArgsConstructor
 @Controller
 public class MemberController {
-//    private final MemberService memberService;
+
+    private final MemberService memberService;
+
+    @GetMapping("/")
+    public String root() {
+        return "hello root world";
+    }
+
+    @GetMapping("/member/list")
+    public String list(Model model) {
+        List<Member> memberList = this.memberService.getList();
+        model.addAttribute("memberList", memberList);
+        return "member_list";
+
+    }
 //
 //    @Autowired  // Spring이 Spring container에 있는 memberService를 가져다가 연결시켜줌
 //    public MemberController(MemberService memberService) {
@@ -16,17 +40,7 @@ public class MemberController {
 //        return "members/createMemberForm";
 //    }
 //
-//    @PostMapping("/members/new")
-//    public String create(MemberForm form) {
-//        Member member = new Member();
-//        member.setName(form.getName());
-//
-//        memberService.join(member);
-//
-//        return "redirect:/";
-//    }
-//
-//    @GetMapping("/members")
+//    @GetMapping("/member/list")
 //    public String list(Model model) {
 //        List<Member> members = memberService.findMembers();
 //        model.addAttribute("members", members);

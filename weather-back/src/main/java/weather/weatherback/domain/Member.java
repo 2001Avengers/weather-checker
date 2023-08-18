@@ -12,11 +12,11 @@ import java.util.List;
 @Entity
 public class Member {
     @Id
-    @Column
+    @Column(unique = true)
     private String email;
 
     @Column
-    private String pw;
+    private String password;
 
     @Column
     private String region;
