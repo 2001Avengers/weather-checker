@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import weather.weatherback.domain.Member;
 import weather.weatherback.service.MemberService;
@@ -19,14 +20,33 @@ public class MemberController {
 
     @GetMapping("/")
     public String root() {
-        return "hello root world";
+        return "home";
+    }
+
+    @GetMapping("/member/login")
+    public String createForm() {
+        return "members/login";
+    }
+
+    @GetMapping("/member/findPassword")
+    public String findPassword() {
+        return "members/find_password";
+    }
+
+    @PostMapping("/member/findPassword")
+    public String findPasswordSubmit(Model model, ResetPasswordInput parameter) {
+
+        boolean result = memberService.sendResetPassword(parameter);
+        model.addAttribute("result", result);
+
+        return "members/find_password_result";
     }
 
     @GetMapping("/member/list")
     public String list(Model model) {
         List<Member> memberList = this.memberService.getList();
         model.addAttribute("memberList", memberList);
-        return "member_list";
+        return "members/member_list";
 
     }
 //
