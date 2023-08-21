@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Join</title>
+</head>
+<body>
+<h1>회원가입</h1>
+
+<form method="post">
+    <div>
+        <p>이메일</p>
+<!--        <label for="email" class="form-label">이메일</label>-->
+        <input type="email" placeholder="email" id="email" required/>
+    </div>
+    <div>
+        <p>비번</p>
+<!--        <label for="password1" class="form-label">비밀번호</label>-->
+        <input type="password" placeholder="password" id="password1" required/>
+    </div>
+    <div>
+        <p>비번확인</p>
+<!--        <label for="password2" class="form-label">비밀번호 확인</label>-->
+        <input type="password" placeholder="password" id="password2" required/>
+    </div>
+    <div>
+        <p>지역</p>
+<!--        <label for="region" class="form-label">지역</label>-->
+        <input type="text" placeholder="region" id="region" required/>
+    </div>
+    <div>
+        <p>비</p>
+<!--        <label for="rainOn" class="form-label">비</label>-->
+        <input type="checkbox" id="rainOn"/>
+    </div>
+    <div>
+        <p>눈</p>
+<!--        <label for="snowOn" class="form-label">눈</label>-->
+        <input type="checkbox" id="snowOn"/>
+    </div>
+    <div>
+        <p>먼지</p>
+<!--        <label for="dustOn" class="form-label">미세먼지</label>-->
+        <input type="checkbox" id="dustOn"/>
+    </div>
+    <div>
+        <p>자외선</p>
+<!--        <label for="uvOn" class="form-label">자외선</label>-->
+        <input type="checkbox" id="uvOn"/>
+    </div>
+    <div>
+        <button>회원가입</button>
+    </div>
+</form>
+</body>
+</html>

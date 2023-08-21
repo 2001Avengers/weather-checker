@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+  <div class="my-3 border-bottom">
+    <div>
+      <h4>회원가입</h4>
+    </div>
+  </div>
+  <form th:action="@{/member/join}" th:object="${memberJoinForm}" method="post">
+    <div th:replace="~{form_errors :: formErrorsFragment}"></div>
+    <div class="mb-3">
+      <label for="email" class="form-label">email</label>
+      <input type="email" th:field="*{email}" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="password1" class="form-label">비밀번호</label>
+      <input type="password" th:field="*{password1}" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="password2" class="form-label">비밀번호 확인</label>
+      <input type="password" th:field="*{password2}" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="region" class="form-label">지역</label>
+      <input type="text" th:field="*{region}" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="rainOn" class="form-label">rain</label>
+      <input type="checkbox" th:field="*{rainOn}" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="snowOn" class="form-label">snow</label>
+      <input type="checkbox" th:field="*{snowOn}" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="dustOn" class="form-label">dust</label>
+      <input type="checkbox" th:field="*{dustOn}" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="uvOn" class="form-label">uv</label>
+      <input type="checkbox" th:field="*{uvOn}" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">회원가입</button>
+  </form>
+</div>
+</html>

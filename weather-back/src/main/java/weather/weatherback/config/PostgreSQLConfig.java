@@ -30,8 +30,6 @@ public class PostgreSQLConfig implements ApplicationRunner {
 //            String sql = "CREATE TABLE TBL_TEST(NO INTEGER NOT NULL, TEST_NAME VARCHAR(255), PRIMARY KEY (NO))";
 //            statement.executeUpdate(sql);
         }
-
-//        jdbcTemplate.execute("INSERT INTO TBL_TEST VALUES (1, 'it works')");
     }
 
 }
