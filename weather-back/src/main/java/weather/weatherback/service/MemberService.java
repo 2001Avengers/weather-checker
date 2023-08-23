@@ -16,7 +16,7 @@ import java.util.function.Function;
 
 @RequiredArgsConstructor
 @Service
-public class MemberService implements MemberRepository{
+public class MemberService{
     private final MemberRepository memberRepository;
 
     public List<Member> getList() {
@@ -24,11 +24,4 @@ public class MemberService implements MemberRepository{
     }
 
 
-    @Override
-    public boolean sendResetPassword(ResetPasswordInput parameter) {
-
-
-
-        return false;
-    }
 }

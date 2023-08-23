@@ -1,12 +1,22 @@
 package weather.weatherback.domain;
-
 import jakarta.persistence.*;
+import lombok.Data;
+import java.time.LocalDateTime;
 
-import lombok.Getter;
-import lombok.Setter;
+@Data
+@Entity
+public class Member {
+    @Id
+    private String email;
 
-import java.util.List;
+    private String password;
 
+    // 회원 가입 날짜
+    private LocalDateTime regDt;
+
+}
+
+/*
 @Getter
 @Setter
 @Entity
@@ -36,3 +46,5 @@ public class Member {
     @OneToMany(mappedBy = "member", cascade = CascadeType.REMOVE)
     private List<MemberNotif> memberNotifList;
 }
+
+ */
