@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3b03fbe-5d24-49cf-b913-537f5752c071" name="Changes" comment="회원가입">
-      <change afterPath="$PROJECT_DIR$/weather-back/src/main/java/weather/weatherback/repository/MemberService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weather-back/src/main/resources/templates/members/info.html" afterDir="false" />
+    <list default="true" id="d3b03fbe-5d24-49cf-b913-537f5752c071" name="Changes" comment="회원가입 수정">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weather-back/src/main/java/weather/weatherback/service/MemberRole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather-back/src/main/java/weather/weatherback/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-back/src/main/java/weather/weatherback/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather-back/src/main/java/weather/weatherback/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-back/src/main/java/weather/weatherback/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-back/src/main/java/weather/weatherback/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-back/src/main/java/weather/weatherback/repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-back/src/main/java/weather/weatherback/repository/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-back/src/main/java/weather/weatherback/repository/MemberService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather-back/src/main/java/weather/weatherback/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-back/src/main/java/weather/weatherback/service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-back/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/weather-back/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-back/src/main/resources/templates/members/register_complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/weather-back/src/main/resources/templates/members/register_complete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-back/src/main/resources/templates/members/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/weather-back/src/main/resources/templates/members/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +40,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,6 +56,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -138,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692795199981</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="회원가입 수정">
+      <option name="closed" value="true" />
+      <created>1693034374244</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1693034374245</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,7 +167,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="비밀번호 찾기 html" />
     <MESSAGE value="회원가입" />
-    <option name="LAST_COMMIT_MESSAGE" value="회원가입" />
+    <MESSAGE value="회원가입 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="회원가입 수정" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

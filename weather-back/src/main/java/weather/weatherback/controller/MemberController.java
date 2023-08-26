@@ -54,11 +54,30 @@ public class MemberController {
 
     }
 
-    // 로그인
+    // 로그인 - GET
     @GetMapping("/member/login")
-    public String createForm() {
+    public String login() {
         return "members/login";
     }
+
+    /* 스프링 시큐리티가 처리할 테니 걱정말라구 -!
+    // 로그인 - POST
+    @PostMapping("member/login")
+    public String loginComplete(Model model, HttpServletRequest request, MemberInput parameter) {
+
+        boolean result = memberService.register(parameter);
+        // 로그인 정보가 일치할 때 메인 페이지로 이동
+        if (result) {
+            return "main";
+        }
+        // 로그인 정보 불일치 시 불일치 팝업 알림 & 로그인 창으로 리다이렉트
+        else {
+            // 불일치 팝업 알림 띄우기
+            return "redirect:/";
+        }
+    }
+
+     */
 
     // 비밀번호 찾기
     @GetMapping("/member/findPassword")
