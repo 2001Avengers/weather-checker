@@ -11,20 +11,16 @@ import org.springframework.web.bind.annotation.*;
 import weather.weatherback.domain.Member;
 import weather.weatherback.domain.MemberInput;
 import weather.weatherback.repository.MemberRepository;
-import weather.weatherback.service.MemberService;
+import weather.weatherback.repository.MemberService;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 @Controller
 public class MemberController {
 
-    private final MemberRepository memberRepository;
-
-    public MemberController(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
-    }
+    private final MemberService memberService;
 
     // 메인 화면
     @GetMapping("/")
@@ -42,23 +38,17 @@ public class MemberController {
     // request  Web -> Server
     // response Server -> Web
     @PostMapping("/member/register")
-    public String registerSubmit(HttpServletRequest request) {
+    public String registerSubmit(Model model, HttpServletRequest request, MemberInput parameter) {
 
 
         /* MemberInput 으로 자동 매핑
         String email = request.getParameter("email");
         String password = request.getParameter("password");
          */
+        //String rePassword = request.getParameter("rePassword");
 
-        String rePassword = request.getParameter("rePassword");
-        System.out.println(rePassword);
-
-        //Member member = new Member();
-        //member.setEmail(parameter.getEmail());
-        //member.setPassword(parameter.getPassword());
-        //member.setRegDt(LocalDateTime.now());
-
-        //memberRepository.save(member);
+        boolean result = memberService.register(parameter);
+        model.addAttribute("result", result);
 
         return "members/register_complete";
 
@@ -74,6 +64,12 @@ public class MemberController {
     @GetMapping("/member/findPassword")
     public String findPassword() {
         return "members/find_password";
+    }
+
+    // 회원 정보
+    @GetMapping("member/info")
+    public String memberInfo() {
+        return "members/info";
     }
 
     /*

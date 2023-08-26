@@ -14,8 +14,10 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+                // 로그인을 하지 않아도 조회 가능 (스프링 시큐리티)
                 .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
-                        .requestMatchers(new AntPathRequestMatcher("/**")).permitAll())
+                        .requestMatchers(new AntPathRequestMatcher("/", "/**")).permitAll())
+                // post 요청에 csrf 해제
                 .csrf((csrf) -> csrf
                         .ignoringRequestMatchers(new AntPathRequestMatcher("/**")))
         ;
