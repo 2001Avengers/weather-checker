@@ -2,6 +2,7 @@ package weather.weatherback.service;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+<<<<<<< Updated upstream
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -9,12 +10,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCrypt;
+=======
+>>>>>>> Stashed changes
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import weather.weatherback.MemberJoinForm;
 import weather.weatherback.domain.Member;
 import weather.weatherback.repository.MemberRepository;
 
+<<<<<<< Updated upstream
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,4 +64,19 @@ public class MemberService implements UserDetailsService {
 
         return new User(member.getEmail(), member.getPassword(), grantedAuthorities);
     }
+=======
+@RequiredArgsConstructor
+@Service
+public class MemberService {
+    private final MemberRepository memberRepository;
+    private final PasswordEncoder passwordEncoder;
+
+    public Member create(String email, String password) {
+        Member member = new Member();
+        member.setEmail(email);
+        member.setPassword(passwordEncoder.encode(password));
+        this.memberRepository.save(member);
+        return member;
+    }
+>>>>>>> Stashed changes
 }

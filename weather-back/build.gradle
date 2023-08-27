@@ -24,7 +24,6 @@ dependencies {
 
 	implementation group: 'org.postgresql', name: 'postgresql', version: '42.6.0'
 	implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
-	implementation "io.jsonwebtoken:jjwt:0.9.1"
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
 
